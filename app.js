@@ -11,6 +11,9 @@ const corsOptions = {
 app.use(cors(corsOptions))
 app.use(express.json())
 
+// Root Route
+app.get('/', (request, response) => response.send('Hello World!'))
+
 // Create New Player 
 app.post('/players', async (request, response) => {
   const { username, userUuid } = request.body
